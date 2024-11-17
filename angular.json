@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-base-project": {
+    "dynamic-modals-ngzorro": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-base-project",
+            "outputPath": "dist/dynamic-modals-ngzorro",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-base-project:build:production"
+              "buildTarget": "dynamic-modals-ngzorro:build:production"
             },
             "development": {
-              "buildTarget": "my-base-project:build:development"
+              "buildTarget": "dynamic-modals-ngzorro:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -57,6 +57,10 @@ export class OptionsSelectorComponent implements OnInit {
         borderRadius: '10px',
         boxShadow: '0px 0px 40px rgba(0,0,0, 0.06)',
       },
+      nzData: {
+        modalContent: this.modalForm.getRawValue(),
+        options: this.options,
+      },
     });
   }
 }

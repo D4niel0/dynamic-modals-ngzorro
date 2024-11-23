@@ -1,1 +1,47 @@
-<p>dynamic-modal works!</p>
+<div class="dynamic-modal-container">
+  <div
+    class="modal-header flex items-center py-5 px-6"
+    *ngIf="nzModalData.options?.header"
+  >
+    <span>{{ nzModalData.modalContent?.headerText }}</span>
+  </div>
+  <div
+    class="modal-body"
+    [ngClass]="nzModalData.options?.header ? 'pt-9' : 'pt-0'"
+    *ngIf="nzModalData.options?.body"
+  >
+    <span>{{ nzModalData.modalContent?.body }}</span>
+  </div>
+  <div class="button flex justify-end pt-4">
+    <div class="no-confirm w-1/5">
+      <button
+        nz-button
+        nzBlock
+        nzType="primary"
+        nzDanger
+        type="button"
+        *ngIf="
+          nzModalData.options?.button && !nzModalData.options?.buttonConfirm
+        "
+      >
+        {{ nzModalData.modalContent?.buttonText }}
+      </button>
+
+      <button
+        nz-button
+        nzBlock
+        nzType="primary"
+        nzDanger
+        type="button"
+        *ngIf="
+          nzModalData.options?.button && nzModalData.options?.buttonConfirm
+        "
+        nz-popconfirm
+        [nzPopconfirmTitle]="nzModalData.modalContent?.confirmText"
+        nzPopconfirmPlacement="bottom"
+      >
+        {{ nzModalData.modalContent?.buttonText }}
+      </button>
+    </div>
+  </div>
+</div>

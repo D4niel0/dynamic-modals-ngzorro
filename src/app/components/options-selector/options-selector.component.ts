@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NgZorroFormsModule } from '../../shared/ng-zorro-forms/ng-zorro-forms.module';
 import { HeaderOptionsComponent } from '../header-options/header-options.component';
+import { BodyOptionsComponent } from '../body-options/body-options.component';
 
 @Component({
   selector: 'app-options-selector',
   standalone: true,
-  imports: [HeaderOptionsComponent],
+  imports: [HeaderOptionsComponent, BodyOptionsComponent],
   templateUrl: './options-selector.component.html',
   styleUrl: './options-selector.component.scss',
 })

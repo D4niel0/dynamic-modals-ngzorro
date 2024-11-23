@@ -1,7 +1,15 @@
-<div class="header-options">
-  <app-header-options
-    [modalForm]="modalForm"
-    [options]="options"
-  ></app-header-options>
+<div class="options-container flex flex-col gap-4">
+  <div class="header-options">
+    <app-header-options
+      [modalForm]="modalForm"
+      [options]="options"
+    ></app-header-options>
+  </div>
+  <div class="body-options">
+    <app-body-options
+      [modalForm]="modalForm"
+      [options]="options"
+    ></app-body-options>
+  </div>
+  <div class="button-options"></div>
 </div>
-<div class="button-options"></div>

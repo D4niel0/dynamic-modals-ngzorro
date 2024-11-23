@@ -1,1 +1,26 @@
-<p>body-options works!</p>
+<div class="flex gap-2">
+  <nz-switch [(ngModel)]="options.body"></nz-switch>
+  <div class="flex flex-col gap-2 grow">
+    <span>Incluir body</span>
+    <div *ngIf="options.body" class="options">
+      <form nz-form [formGroup]="modalForm" [nzLayout]="'vertical'">
+        <nz-form-item>
+          <nz-form-label nzFor="body">{{ "Texto de body" }}</nz-form-label>
+          <nz-form-control [nzErrorTip]="bodyErrorTpl">
+            <input
+              nz-input
+              formControlName="body"
+              id="body"
+              [placeholder]="'Introduce el texto para el body'"
+            />
+            <ng-template #bodyErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('required')">{{
+                "Debes introducir un texto para el body"
+              }}</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,11 @@
-# MyBaseProject
+# modalGenerate
+
+This project allows you to generate dynamic ngZorro modals by changing the header, body and button options.
+It also allows to add a confirmation to the button.
+
+It is useful to see how to implement a shared modal in the project for its use.
+
+## Version
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
 

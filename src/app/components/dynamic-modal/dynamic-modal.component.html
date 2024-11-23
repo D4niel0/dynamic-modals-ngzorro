@@ -3,7 +3,9 @@
     class="modal-header flex items-center py-5 px-6"
     *ngIf="nzModalData.options?.header"
   >
-    <span>{{ nzModalData.modalContent?.headerText }}</span>
+    <span class="text-base font-bold">{{
+      nzModalData.modalContent?.headerText
+    }}</span>
   </div>
   <div
     class="modal-body text-center"

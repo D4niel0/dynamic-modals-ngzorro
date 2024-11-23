@@ -7,11 +7,13 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Options } from '../../core/models';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { DynamicModalComponent } from '../dynamic-modal/dynamic-modal.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-options-selector',
   standalone: true,
   imports: [
+    CommonModule,
     HeaderOptionsComponent,
     BodyOptionsComponent,
     ButtonsOptionsComponent,
@@ -39,8 +41,6 @@ export class OptionsSelectorComponent implements OnInit {
   createForm(): void {
     this.modalForm = this.fb.group({
       headerText: [null],
-      headerBgColor: [null],
-      headerTextColor: [null],
       body: [null],
       buttonText: [null],
       confirmText: [null],
@@ -60,6 +60,10 @@ export class OptionsSelectorComponent implements OnInit {
       nzData: {
         modalContent: this.modalForm.getRawValue(),
         options: this.options,
+      },
+      nzMaskStyle: {
+        backdropFilter: 'blur(8px)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
       },
     });
   }

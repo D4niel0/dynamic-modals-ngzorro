@@ -18,6 +18,9 @@ export class ButtonsOptionsComponent {
 
     if (control === 'buttonText') {
       this.modalForm.controls['confirmText']?.reset();
+      this.modalForm.controls['confirmText']?.clearValidators();
+      this.modalForm.controls['confirmText']?.updateValueAndValidity();
+      this.options.buttonConfirm = false;
     }
 
     if (apply) {
@@ -27,5 +30,6 @@ export class ButtonsOptionsComponent {
     }
 
     this.modalForm.controls[control]?.updateValueAndValidity();
+    console.log(this.modalForm);
   }
 }

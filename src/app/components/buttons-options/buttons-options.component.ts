@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { NgZorroFormsModule } from '../../shared/ng-zorro-forms/ng-zorro-forms.module';
 
 @Component({
@@ -12,4 +12,15 @@ import { NgZorroFormsModule } from '../../shared/ng-zorro-forms/ng-zorro-forms.m
 export class ButtonsOptionsComponent {
   @Input() modalForm: FormGroup = new FormGroup({});
   @Input() options: any | undefined;
+
+  applyValidators(apply: boolean, control: string): void {
+    if (apply) {
+      this.modalForm.controls[control]?.addValidators([Validators.required]);
+    } else {
+      this.modalForm.controls[control]?.clearValidators();
+    }
+
+    this.modalForm.controls[control]?.updateValueAndValidity();
+    console.log(this.modalForm.controls[control]);
+  }
 }

@@ -1,5 +1,8 @@
 <div class="flex gap-2">
-  <nz-switch [(ngModel)]="options.button"></nz-switch>
+  <nz-switch
+    [(ngModel)]="options.button"
+    (ngModelChange)="applyValidators($event, 'buttonText')"
+  ></nz-switch>
   <div class="flex flex-col gap-2 grow">
     <span>Incluir botón</span>
     <div *ngIf="options.button" class="options">
@@ -25,7 +28,10 @@
       </form>
 
       <div class="flex gap-2">
-        <nz-switch [(ngModel)]="options.buttonConfirm"></nz-switch>
+        <nz-switch
+          [(ngModel)]="options.buttonConfirm"
+          (ngModelChange)="applyValidators($event, 'confirmText')"
+        ></nz-switch>
         <div class="flex flex-col gap-2 grow">
           <span>Incluir confirmación</span>
           <div *ngIf="options.buttonConfirm" class="options">

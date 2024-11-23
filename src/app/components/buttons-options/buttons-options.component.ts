@@ -16,6 +16,10 @@ export class ButtonsOptionsComponent {
   applyValidators(apply: boolean, control: string): void {
     this.modalForm.controls[control]?.reset();
 
+    if (control === 'buttonText') {
+      this.modalForm.controls['confirmText']?.reset();
+    }
+
     if (apply) {
       this.modalForm.controls[control]?.addValidators([Validators.required]);
     } else {

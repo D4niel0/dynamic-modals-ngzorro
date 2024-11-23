@@ -11,7 +11,7 @@ import { FormGroup, Validators } from '@angular/forms';
 })
 export class HeaderOptionsComponent {
   @Input() modalForm: FormGroup = new FormGroup({});
-  @Input() options: any | undefined;
+  @Input() options: any = { header: false };
 
   applyValidators(apply: boolean): void {
     this.modalForm.controls['headerText']?.reset();

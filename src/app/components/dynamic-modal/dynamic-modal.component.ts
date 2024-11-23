@@ -12,5 +12,5 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
   styleUrl: './dynamic-modal.component.scss',
 })
 export class DynamicModalComponent {
-  readonly nzModalData = inject(NZ_MODAL_DATA);
+  nzModalData = inject(NZ_MODAL_DATA);
 }

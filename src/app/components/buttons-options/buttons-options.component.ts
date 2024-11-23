@@ -11,7 +11,7 @@ import { NgZorroFormsModule } from '../../shared/ng-zorro-forms/ng-zorro-forms.m
 })
 export class ButtonsOptionsComponent {
   @Input() modalForm: FormGroup = new FormGroup({});
-  @Input() options: any | undefined;
+  @Input() options: any = { button: false, buttonConfirm: false };
 
   applyValidators(apply: boolean, control: string): void {
     this.modalForm.controls[control]?.reset();

@@ -11,7 +11,7 @@ import { FormGroup, Validators } from '@angular/forms';
 })
 export class BodyOptionsComponent {
   @Input() modalForm: FormGroup = new FormGroup({});
-  @Input() options: any | undefined;
+  @Input() options: any = { body: false };
 
   applyValidators(apply: boolean): void {
     this.modalForm.controls['body']?.reset();

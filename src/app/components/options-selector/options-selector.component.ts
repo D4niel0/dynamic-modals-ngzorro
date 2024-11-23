@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { NgZorroFormsModule } from '../../shared/ng-zorro-forms/ng-zorro-forms.module';
 import { HeaderOptionsComponent } from '../header-options/header-options.component';
 import { BodyOptionsComponent } from '../body-options/body-options.component';
+import { ButtonsOptionsComponent } from '../buttons-options/buttons-options.component';
 
 @Component({
   selector: 'app-options-selector',
   standalone: true,
-  imports: [HeaderOptionsComponent, BodyOptionsComponent],
+  imports: [
+    HeaderOptionsComponent,
+    BodyOptionsComponent,
+    ButtonsOptionsComponent,
+  ],
   templateUrl: './options-selector.component.html',
   styleUrl: './options-selector.component.scss',
 })
@@ -32,9 +36,8 @@ export class OptionsSelectorComponent implements OnInit {
       headerBgColor: [null],
       headerTextColor: [null],
       body: [null],
-      closeButton: [null],
-      textButton: [null],
-      textConfig: [null],
+      buttonText: [null],
+      confirmText: [null],
     });
   }
 }

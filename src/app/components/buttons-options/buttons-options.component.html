@@ -1,1 +1,57 @@
-<p>buttons-options works!</p>
+<div class="flex gap-2">
+  <nz-switch [(ngModel)]="options.button"></nz-switch>
+  <div class="flex flex-col gap-2 grow">
+    <span>Incluir botón</span>
+    <div *ngIf="options.button" class="options">
+      <form nz-form [formGroup]="modalForm" [nzLayout]="'vertical'">
+        <nz-form-item>
+          <nz-form-label nzFor="buttonText">{{
+            "Texto de botón"
+          }}</nz-form-label>
+          <nz-form-control [nzErrorTip]="buttonTextErrorTpl">
+            <input
+              nz-input
+              formControlName="buttonText"
+              id="buttonText"
+              [placeholder]="'Introduce el texto para el botón'"
+            />
+            <ng-template #buttonTextErrorTpl let-control>
+              <ng-container *ngIf="control.hasError('required')">{{
+                "Debes introducir un texto para el botón"
+              }}</ng-container>
+            </ng-template>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+      <div class="flex gap-2">
+        <nz-switch [(ngModel)]="options.buttonConfirm"></nz-switch>
+        <div class="flex flex-col gap-2 grow">
+          <span>Incluir confirmación</span>
+          <div *ngIf="options.buttonConfirm" class="options">
+            <form nz-form [formGroup]="modalForm" [nzLayout]="'vertical'">
+              <nz-form-item>
+                <nz-form-label nzFor="confirmText">{{
+                  "Texto de confirmación"
+                }}</nz-form-label>
+                <nz-form-control [nzErrorTip]="confirmTextErrorTpl">
+                  <input
+                    nz-input
+                    formControlName="confirmText"
+                    id="confirmText"
+                    [placeholder]="'Introduce el texto para la confirmación'"
+                  />
+                  <ng-template #confirmTextErrorTpl let-control>
+                    <ng-container *ngIf="control.hasError('required')">{{
+                      "Debes introducir un texto para la confirmación"
+                    }}</ng-container>
+                  </ng-template>
+                </nz-form-control>
+              </nz-form-item>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

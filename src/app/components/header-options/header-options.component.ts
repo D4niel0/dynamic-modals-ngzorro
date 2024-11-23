@@ -14,6 +14,8 @@ export class HeaderOptionsComponent {
   @Input() options: any | undefined;
 
   applyValidators(apply: boolean): void {
+    this.modalForm.controls['headerText']?.reset();
+
     if (apply) {
       this.modalForm.controls['headerText']?.addValidators([
         Validators.required,
@@ -23,6 +25,5 @@ export class HeaderOptionsComponent {
     }
 
     this.modalForm.controls['headerText']?.updateValueAndValidity();
-    console.log(this.modalForm.controls['headerText']);
   }
 }

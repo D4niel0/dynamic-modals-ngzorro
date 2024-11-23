@@ -1,5 +1,8 @@
 <div class="flex gap-2">
-  <nz-switch [(ngModel)]="options.body"></nz-switch>
+  <nz-switch
+    [(ngModel)]="options.body"
+    (ngModelChange)="applyValidators($event)"
+  ></nz-switch>
   <div class="flex flex-col gap-2 grow">
     <span>Incluir body</span>
     <div *ngIf="options.body" class="options">

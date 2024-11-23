@@ -17,4 +17,24 @@
       [options]="options"
     ></app-buttons-options>
   </div>
+
+  <div class="apply-container">
+    <button
+      nz-button
+      nzBlock
+      nzType="primary"
+      nzDanger
+      type="button"
+      [disabled]="
+        modalForm.invalid ||
+        (!options.body &&
+          !options.button &&
+          !options.buttonConfirm &&
+          !options.header)
+      "
+      (click)="createModal()"
+    >
+      {{ "Crear modal" }}
+    </button>
+  </div>
 </div>

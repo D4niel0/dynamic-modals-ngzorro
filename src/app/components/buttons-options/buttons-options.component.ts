@@ -14,6 +14,8 @@ export class ButtonsOptionsComponent {
   @Input() options: any | undefined;
 
   applyValidators(apply: boolean, control: string): void {
+    this.modalForm.controls[control]?.reset();
+
     if (apply) {
       this.modalForm.controls[control]?.addValidators([Validators.required]);
     } else {
@@ -21,6 +23,5 @@ export class ButtonsOptionsComponent {
     }
 
     this.modalForm.controls[control]?.updateValueAndValidity();
-    console.log(this.modalForm.controls[control]);
   }
 }
